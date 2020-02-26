@@ -133,10 +133,10 @@ window.addEventListener('DOMContentLoaded', function () {
     const slider = () => {
         const btn = document.querySelectorAll('.portfolio-btn'),
             dot = document.querySelectorAll('.dot'),
-            slider = document.querySelector('.portfolio-content');
-        const slide = document.querySelectorAll('.portfolio-item');
-        const dotsParrent = document.querySelector('.portfolio-dots');
-        let dots = [];
+            slider = document.querySelector('.portfolio-content'),
+            slide = document.querySelectorAll('.portfolio-item'),
+            dotsParrent = document.querySelector('.portfolio-dots');
+        let dots;
 
 
         let currentSlide = 0,
@@ -145,16 +145,15 @@ window.addEventListener('DOMContentLoaded', function () {
         const addDots = () => {
             for (let i = 0; i < slide.length; i++) {
                 let element = document.createElement('li');
-                dots.push(element);
+                element.classList.add('dot');
+                dotsParrent.appendChild(element);
             }
 
-            dots.forEach((elem) => {
-                elem.classList.add('dot');
-                dotsParrent.appendChild(elem);
-            });
+            dots = document.querySelectorAll('.dot');
 
-           dots[0].classList.add('dot-active');
+            dots[0].classList.add('dot-active');
             slide[0].classList.add('portfolio-item-active');
+
         };
         addDots();
 
