@@ -130,13 +130,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //слайдер
 
-    const slider = () => {
+       const slider = () => {
         const btn = document.querySelectorAll('.portfolio-btn'),
-            dot = document.querySelectorAll('.dot'),
             slider = document.querySelector('.portfolio-content'),
             slide = document.querySelectorAll('.portfolio-item'),
             dotsParrent = document.querySelector('.portfolio-dots');
-        let dots;
+        let dot;
 
 
         let currentSlide = 0,
@@ -149,14 +148,13 @@ window.addEventListener('DOMContentLoaded', function () {
                 dotsParrent.appendChild(element);
             }
 
-            dots = document.querySelectorAll('.dot');
+            dot = document.querySelectorAll('.dot');
 
-            dots[0].classList.add('dot-active');
+            dot[0].classList.add('dot-active');
             slide[0].classList.add('portfolio-item-active');
 
         };
         addDots();
-
 
 
         const prevSlide = (elem, index, strClass) =>{
